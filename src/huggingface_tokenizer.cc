@@ -34,8 +34,7 @@ class HFTokenizer : public Tokenizer {
     size_t len;
     tokenizers_get_encode_ids(handle_, &data, &len);
     const int32_t* data_i32 = reinterpret_cast<const int32_t*>(data);
-    auto res = std::vector<int32_t>(data_i32, data_i32 + len);
-    return res;
+    return std::vector<int32_t>(data_i32, data_i32 + len);
   }
 
   // use i32 to be consistent with sentencepiece
